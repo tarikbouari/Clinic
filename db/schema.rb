@@ -44,9 +44,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_20_173710) do
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "age", null: false
+    t.integer "age", default: 0, null: false
     t.string "gender", default: "", null: false
-    t.datetime "dob", null: false
+    t.string "dob", default: "", null: false
     t.string "blood", default: "", null: false
     t.string "phone", default: "", null: false
     t.string "address", default: "", null: false
