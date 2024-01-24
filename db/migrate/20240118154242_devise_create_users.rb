@@ -4,14 +4,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.1]
   def change
     create_table :users do |t|
       ## Database authenticatable 
-      t.string  :name, null: false
-      t.integer :age, null: false, default: 0
-      t.string  :gender, null: false, default: ""
-      t.string  :dob, null: false, default: ""
-      t.string  :blood, null: false, default: ""
-      t.string  :phone, null: false, default: ""
-      t.string  :address, null: false, default: ""
-      t.string  :role, null: false, default: "patient"
       
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -19,7 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.1]
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
-
+      t.references :rolable, polymorphic: true
       ## Rememberable
       t.datetime :remember_created_at
 

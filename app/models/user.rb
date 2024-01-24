@@ -5,7 +5,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :jwt_authenticatable, jwt_revocation_strategy: self
-         
-         
-  has_one_attached :profile_photo
+   
+  has_one_attached :profile_photo       
+  attr_accessor :email, :password, :password_confirmation
+  
+  belongs_to :rolable, polymorphic: true
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true
 end
