@@ -9,7 +9,5 @@ class User < ApplicationRecord
   has_one_attached :profile_photo       
   attr_accessor :email, :password, :password_confirmation
   
-  belongs_to :rolable, polymorphic: true
-  validates :email, presence: true, uniqueness: true
-  validates :password, presence: true
+
 end

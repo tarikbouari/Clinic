@@ -73,6 +73,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_21_124008) do
     t.string "phone", default: "", null: false
     t.string "address", default: "", null: false
     t.string "specialization", null: false
+    t.boolean "available", default: true
     t.bigint "admin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -86,7 +87,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_21_124008) do
     t.string "dob", default: "", null: false
     t.string "blood", default: "", null: false
     t.string "health_condition", null: false
-    t.boolean "available", default: true
     t.string "phone", default: "", null: false
     t.string "address", default: "", null: false
     t.bigint "admin_id"
@@ -120,6 +120,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_21_124008) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "profile_photo", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.string "rolable_type"
